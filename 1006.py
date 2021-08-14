@@ -35,6 +35,7 @@ def BOJ1006():
                 neighbor = neighbor + 1
                 neighbor_id = [a - 1,b]
             if b - 1 >= 0 and bridge[a][b - 1] == 1:
+                neighbor = neighbor + 1
                 neighbor_id = [a - 1, b - 1]
             if a + 1 < N and b + 1 < N and bridge[a + 1][b + 1] == 1:
                 neighbor = neighbor + 1
