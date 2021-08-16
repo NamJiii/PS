@@ -6,7 +6,37 @@
 '''
 
 def BOJ1006():
-    N,W =map(int,input().split())
+    N,W = map(int,input().split())
+    arr1 = list(map(int,input().split()))
+    arr2 = list(map(int,input().split()))
+
+    couple_count=0
+
+    #bridge_list 채우기
+    for i in range(N):
+        if (arr1[i] + arr1[i - 1] <= W):
+            arr1[i] = W+1
+            arr1[i-1] = W+1
+            couple_count = couple_count + 1
+
+        if (arr2[i] + arr2[i - 1] <= W):
+            arr2[i] = W+1
+            arr2[i - 1] = W+1
+            couple_count = couple_count + 1
+
+
+        if (arr1[i - 1] + arr2[i - 1] <= W):
+            arr1[i - 1] = W+1
+            arr2[i - 1] = W+1
+            couple_count = couple_count + 1
+
+    #하나씩 삭제ㄱㄱ
+
+    print(2*N-couple_count)
+    return
+
+def BOJ1006_2():
+    N,W = map(int,input().split())
     arr1 = list(map(int,input().split()))
     arr2 = list(map(int,input().split()))
 
@@ -64,7 +94,6 @@ def BOJ1006():
 
     print(2*N-couple_count)
     return
-
 
 
 
