@@ -101,7 +101,8 @@ def main():
     T = int(input())
     while(T!=0):
         T = T-1
-        BOJ1006()
+        #BOJ1006()
+        BOJ1006_2()
     return
 
 #if __name__ =="__main__":
